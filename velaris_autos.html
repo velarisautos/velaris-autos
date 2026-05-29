@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Velaris Autos — Autos usados en GBA Norte. El auto que buscás, al precio que necesitás.">
+<title>Velaris Autos — GBA Norte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --dark: #1C1C1E;
+  --dark2: #2C2C2E;
+  --dark3: #3A3A3C;
+  --blue: #4FC3F7;
+  --blue-dim: rgba(79,195,247,0.15);
+  --white: #FFFFFF;
+  --gray: #8E8E93;
+  --light: #F2F2F7;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--dark);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(28,28,30,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.6rem; font-weight: 900; letter-spacing: 2px;
+  text-decoration: none;
+}
+.nav-logo span:first-child { color: var(--blue); }
+.nav-logo span:last-child { color: var(--white); }
+
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a {
+  color: rgba(255,255,255,0.7); text-decoration: none;
+  font-size: 0.85rem; font-weight: 500; letter-spacing: 1px;
+  text-transform: uppercase; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--blue); }
+
+.nav-cta {
+  background: var(--blue); color: var(--dark) !important;
+  padding: 0.5rem 1.2rem; border-radius: 4px;
+  font-weight: 700 !important;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 8rem 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(79,195,247,0.08) 0%, transparent 60%);
+}
+
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-content { position: relative; max-width: 700px; }
+
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--blue-dim); border: 1px solid rgba(79,195,247,0.3);
+  color: var(--blue); padding: 0.3rem 0.8rem; border-radius: 2rem;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900; line-height: 0.95;
+  letter-spacing: -1px; margin-bottom: 1.5rem;
+}
+
+.hero h1 em { color: var(--blue); font-style: normal; }
+
+.hero p {
+  font-size: 1.1rem; color: rgba(255,255,255,0.65);
+  line-height: 1.6; margin-bottom: 2.5rem; max-width: 520px;
+}
+
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn-primary {
+  background: var(--blue); color: var(--dark);
+  padding: 0.9rem 2rem; border-radius: 4px;
+  font-weight: 700; font-size: 0.95rem; text-decoration: none;
+  letter-spacing: 0.5px; transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-primary:hover { background: #81d4fa; transform: translateY(-1px); }
+
+.btn-secondary {
+  border: 1px solid rgba(255,255,255,0.2); color: var(--white);
+  padding: 0.9rem 2rem; border-radius: 4px;
+  font-weight: 500; font-size: 0.95rem; text-decoration: none;
+  transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-secondary:hover { border-color: var(--blue); color: var(--blue); }
+
+.hero-stats {
+  display: flex; gap: 2rem; margin-top: 4rem; flex-wrap: wrap;
+}
+
+.hero-stat { }
+.hero-stat .num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2rem; font-weight: 800; color: var(--blue);
+}
+.hero-stat .label {
+  font-size: 0.75rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1px;
+}
+
+/* SECTIONS */
+section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+
+.section-tag {
+  color: var(--blue); font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900;
+  line-height: 1; letter-spacing: -0.5px; margin-bottom: 1rem;
+}
+
+.section-sub {
+  color: rgba(255,255,255,0.55); font-size: 1rem; max-width: 500px; line-height: 1.6;
+}
+
+/* STOCK */
+#stock { max-width: 1200px; }
+
+.stock-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 2.5rem; gap: 1rem; flex-wrap: wrap;
+}
+
+.filters {
+  display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.5rem;
+}
+
+.filter-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.6); padding: 0.4rem 1rem; border-radius: 2rem;
+  font-size: 0.8rem; font-weight: 500; cursor: pointer; transition: all 0.2s;
+}
+.filter-btn.active, .filter-btn:hover {
+  background: var(--blue); border-color: var(--blue); color: var(--dark); font-weight: 700;
+}
+
+.cars-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;
+}
+
+.car-card {
+  background: var(--dark2); border-radius: 12px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06); transition: all 0.3s;
+  position: relative;
+}
+.car-card:hover { transform: translateY(-4px); border-color: rgba(79,195,247,0.3); }
+
+.car-img {
+  width: 100%; height: 200px; object-fit: cover;
+  background: var(--dark3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem; color: var(--dark);
+  position: relative; overflow: hidden;
+}
+
+.car-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.car-img-placeholder {
+  width: 100%; height: 200px;
+  background: linear-gradient(135deg, #2C2C2E 0%, #3A3A3C 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3rem; position: relative;
+}
+
+.car-badge {
+  position: absolute; top: 0.75rem; left: 0.75rem;
+  background: var(--blue); color: var(--dark);
+  font-size: 0.65rem; font-weight: 800; letter-spacing: 1px;
+  padding: 0.25rem 0.6rem; border-radius: 2rem; text-transform: uppercase;
+}
+
+.car-badge.permuta { background: #4CAF50; }
+.car-badge.contado { background: var(--dark3); color: var(--white); }
+
+.car-body { padding: 1.25rem; }
+
+.car-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.4rem; font-weight: 800; margin-bottom: 0.25rem; letter-spacing: 0.5px;
+}
+
+.car-year { color: var(--gray); font-size: 0.85rem; margin-bottom: 1rem; }
+
+.car-specs {
+  display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem;
+}
+
+.car-spec {
+  background: rgba(255,255,255,0.05); border-radius: 4px;
+  padding: 0.2rem 0.6rem; font-size: 0.75rem; color: rgba(255,255,255,0.7);
+}
+
+.car-features {
+  display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1.25rem;
+}
+
+.car-feature {
+  font-size: 0.7rem; color: var(--gray); display: flex; align-items: center; gap: 0.25rem;
+}
+.car-feature::before { content: '✓'; color: var(--blue); }
+
+.car-price-row {
+  display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 1rem;
+}
+
+.car-price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.8rem; font-weight: 900; color: var(--white);
+}
+
+.car-cuota {
+  font-size: 0.75rem; color: var(--gray); text-align: right; line-height: 1.3;
+}
+.car-cuota strong { color: var(--blue); }
+
+.car-btns { display: flex; gap: 0.75rem; }
+
+.car-btn-wa {
+  flex: 1; background: var(--blue); color: var(--dark);
+  padding: 0.7rem; border-radius: 6px; text-align: center;
+  font-weight: 700; font-size: 0.85rem; text-decoration: none;
+  transition: all 0.2s;
+}
+.car-btn-wa:hover { background: #81d4fa; }
+
+.car-btn-more {
+  background: rgba(255,255,255,0.07); color: var(--white);
+  padding: 0.7rem 1rem; border-radius: 6px; text-align: center;
+  font-weight: 500; font-size: 0.85rem; text-decoration: none;
+  transition: all 0.2s; cursor: pointer; border: none;
+}
+.car-btn-more:hover { background: rgba(255,255,255,0.12); }
+
+/* PROCESO */
+#proceso { max-width: 1200px; }
+
+.steps-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0; margin-top: 3rem; position: relative;
+}
+
+.steps-grid::before {
+  content: ''; position: absolute; top: 2rem; left: 2rem; right: 2rem; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(79,195,247,0.3), transparent);
+}
+
+.step {
+  padding: 0 1.5rem 2rem; position: relative;
+}
+
+.step-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3.5rem; font-weight: 900; color: var(--blue);
+  opacity: 0.3; line-height: 1; margin-bottom: 0.5rem;
+}
+
+.step-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+
+.step h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: 0.5px;
+}
+
+.step p { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+/* BENEFICIOS */
+#beneficios { max-width: 1200px; }
+
+.benefits-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem; margin-top: 3rem;
+}
+
+.benefit {
+  background: var(--dark2); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px; padding: 1.5rem; transition: all 0.3s;
+}
+.benefit:hover { border-color: rgba(79,195,247,0.2); }
+
+.benefit-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.benefit h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+.benefit p { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+/* SIMULADOR */
+#simulador { max-width: 900px; }
+
+.sim-wrapper {
+  background: var(--dark2); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 2.5rem; margin-top: 2.5rem;
+}
+
+.sim-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+
+@media (max-width: 600px) { .sim-grid { grid-template-columns: 1fr; } }
+
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.form-group label { font-size: 0.8rem; color: var(--gray); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+.form-group input, .form-group select {
+  background: var(--dark3); border: 1px solid rgba(255,255,255,0.1);
+  color: var(--white); padding: 0.8rem 1rem; border-radius: 6px;
+  font-size: 1rem; font-family: 'Barlow', sans-serif;
+  transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus {
+  outline: none; border-color: var(--blue);
+}
+.form-group select option { background: var(--dark2); }
+
+.cuotas-selector { display: flex; gap: 0.5rem; }
+.cuota-opt {
+  flex: 1; background: var(--dark3); border: 1px solid rgba(255,255,255,0.1);
+  color: var(--gray); padding: 0.7rem; border-radius: 6px; text-align: center;
+  font-weight: 600; cursor: pointer; transition: all 0.2s; font-size: 0.9rem;
+}
+.cuota-opt.active { background: var(--blue); border-color: var(--blue); color: var(--dark); }
+
+.sim-result {
+  background: var(--dark3); border-radius: 10px; padding: 1.5rem;
+  margin-top: 1.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  border: 1px solid rgba(79,195,247,0.15);
+}
+
+.sim-result-item { text-align: center; }
+.sim-result-item .value {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.5rem; font-weight: 800; color: var(--blue);
+}
+.sim-result-item .label { font-size: 0.7rem; color: var(--gray); margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.sim-note {
+  font-size: 0.75rem; color: var(--gray); margin-top: 1rem; line-height: 1.4;
+  border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1rem;
+}
+
+.sim-cta { margin-top: 1.5rem; }
+
+/* FAQ */
+#faq { max-width: 800px; }
+
+.faq-list { margin-top: 2.5rem; }
+.faq-item { border-bottom: 1px solid rgba(255,255,255,0.07); }
+.faq-q {
+  padding: 1.25rem 0; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  font-weight: 600; font-size: 1rem;
+}
+.faq-q::after { content: '+'; color: var(--blue); font-size: 1.2rem; font-weight: 300; }
+.faq-item.open .faq-q::after { content: '−'; }
+.faq-a { display: none; padding-bottom: 1.25rem; color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.6; }
+.faq-item.open .faq-a { display: block; }
+
+/* CONTACTO */
+#contacto {
+  max-width: 1200px;
+  background: var(--dark2); border-radius: 16px;
+  padding: 3rem 2rem; margin: 0 auto 5rem;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+
+.contact-info h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; line-height: 1;
+}
+
+.contact-info p { color: rgba(255,255,255,0.55); margin-bottom: 2rem; line-height: 1.6; }
+
+.contact-items { display: flex; flex-direction: column; gap: 1rem; }
+.contact-item {
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.contact-item .icon {
+  width: 40px; height: 40px; background: var(--blue-dim);
+  border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+.contact-item .info { font-size: 0.9rem; }
+.contact-item .info .title { color: var(--gray); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.contact-item .info a { color: var(--white); text-decoration: none; font-weight: 500; }
+.contact-item .info a:hover { color: var(--blue); }
+
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.contact-form input, .contact-form select, .contact-form textarea {
+  background: var(--dark3); border: 1px solid rgba(255,255,255,0.1);
+  color: var(--white); padding: 0.8rem 1rem; border-radius: 6px;
+  font-family: 'Barlow', sans-serif; font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+  outline: none; border-color: var(--blue);
+}
+.contact-form textarea { height: 100px; resize: none; }
+
+/* FOOTER */
+footer {
+  background: #111113; border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 2rem; text-align: center;
+}
+footer .logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.4rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 0.5rem;
+}
+footer .logo span:first-child { color: var(--blue); }
+footer p { color: var(--gray); font-size: 0.8rem; }
+
+/* WA FLOAT */
+.wa-float {
+  position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 99;
+  background: #25D366; color: white;
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: all 0.3s;
+}
+.wa-float:hover { transform: scale(1.1); }
+
+/* MODAL */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,0.8); backdrop-filter: blur(4px);
+  align-items: center; justify-content: center; padding: 1rem;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--dark2); border-radius: 16px; padding: 2rem;
+  max-width: 500px; width: 100%; border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+}
+.modal-close {
+  position: absolute; top: 1rem; right: 1rem;
+  background: none; border: none; color: var(--gray); font-size: 1.5rem; cursor: pointer;
+}
+.modal h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2rem; font-weight: 900; margin-bottom: 0.25rem;
+}
+.modal-sub { color: var(--gray); font-size: 0.85rem; margin-bottom: 1.5rem; }
+.modal-specs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.modal-features { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.5rem; }
+.modal-feature { font-size: 0.9rem; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 0.5rem; }
+.modal-feature::before { content: '✓'; color: var(--blue); font-weight: 700; }
+.modal-price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.5rem; font-weight: 900; color: var(--blue); margin-bottom: 1.5rem;
+}
+.modal-btns { display: flex; gap: 0.75rem; }
+
+/* ADMIN */
+.admin-btn {
+  position: fixed; bottom: 1.5rem; left: 1.5rem; z-index: 99;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+  color: var(--gray); padding: 0.5rem 0.75rem; border-radius: 6px;
+  font-size: 0.7rem; cursor: pointer; transition: all 0.2s;
+}
+.admin-btn:hover { color: var(--blue); border-color: var(--blue); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav { padding: 1rem; }
+  .nav-links { display: none; }
+  .hero { padding: 6rem 1.5rem 3rem; }
+  section { padding: 3.5rem 1.5rem; }
+  .steps-grid::before { display: none; }
+  .sim-result { grid-template-columns: 1fr; }
+  #contacto { margin: 0 1rem 3rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo"><span>V</span><span>ELARIS</span></a>
+  <div class="nav-links">
+    <a href="#stock">Stock</a>
+    <a href="#proceso">Cómo funciona</a>
+    <a href="#simulador">Financiación</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://wa.me/5491130650800?text=Hola%20Velaris%2C%20quiero%20consultar" class="nav-cta">WhatsApp →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">⚡ GBA Norte · José C. Paz · Vicente López · Est. 2026</div>
+    <h1>TU PRÓXIMO<br>AUTO EMPIEZA<br><em>ACÁ.</em></h1>
+    <p>Autos usados seleccionados en GBA Norte. Atención real, precios reales. Sin vueltas, sin sorpresas, sin letra chica.</p>
+    <div class="hero-btns">
+      <a href="#stock" class="btn-primary">🚗 Ver stock disponible</a>
+      <a href="https://wa.me/5491130650800?text=Hola%20Velaris%2C%20quiero%20consultar" class="btn-secondary">💬 WhatsApp directo</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">&lt;1h</div><div class="label">Tiempo de respuesta</div></div>
+      <div class="hero-stat"><div class="num">100%</div><div class="label">Papeles en orden</div></div>
+      <div class="hero-stat"><div class="num">0</div><div class="label">Sorpresas al llegar</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- STOCK -->
+<section id="stock">
+  <div class="stock-header">
+    <div>
+      <div class="section-tag">Stock disponible</div>
+      <h2 class="section-title">NUESTROS<br>AUTOS</h2>
+    </div>
+    <a href="https://wa.me/5491130650800?text=Hola%20Velaris%2C%20quiero%20ver%20el%20stock%20completo" class="btn-secondary">Ver todo por WA →</a>
+  </div>
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterCars('todos')">🔍 Todos</button>
+    <button class="filter-btn" onclick="filterCars('sedan')">Sedán</button>
+    <button class="filter-btn" onclick="filterCars('hatchback')">Hatchback</button>
+    <button class="filter-btn" onclick="filterCars('familiar')">Familiar</button>
+    <button class="filter-btn" onclick="filterCars('financiacion')">Con financiación</button>
+  </div>
+  <div class="cars-grid" id="carsGrid" style="margin-top:2rem">
+
+    <!-- CORSA -->
+    <div class="car-card" data-tipo="sedan" data-financiacion="si">
+      <div class="car-img-placeholder">🚗
+        <div class="car-badge">Financiación</div>
+      </div>
+      <div class="car-body">
+        <div class="car-name">Chevrolet Corsa Classic</div>
+        <div class="car-year">2016 · 85.409 km</div>
+        <div class="car-specs">
+          <span class="car-spec">Nafta</span>
+          <span class="car-spec">Manual</span>
+          <span class="car-spec">GBA Norte</span>
+        </div>
+        <div class="car-features">
+          <span class="car-feature">Aire frío/calor</span>
+          <span class="car-feature">Dirección hidráulica</span>
+          <span class="car-feature">Equipo de música</span>
+        </div>
+        <div class="car-price-row">
+          <div class="car-price">$11.500.000</div>
+          <div class="car-cuota">Desde <strong>$340k/mes</strong><br>48 cuotas · sin garante</div>
+        </div>
+        <div class="car-btns">
+          <a href="https://wa.me/5491130650800?text=Hola%20Velaris%2C%20quiero%20info%20del%20Corsa%20Classic%202016" class="car-btn-wa">💬 Consultar</a>
+          <button class="car-btn-more" onclick="openModal('corsa')">Ver más</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOX -->
+    <div class="car-card" data-tipo="hatchback" data-financiacion="no">
+      <div class="car-img-placeholder">🚗
+        <div class="car-badge contado">Solo contado</div>
+      </div>
+      <div class="car-body">
+        <div class="car-name">Volkswagen Fox 1.6</div>
+        <div class="car-year">2012 · 133.000 km</div>
+        <div class="car-specs">
+          <span class="car-spec">Nafta</span>
+          <span class="car-spec">Manual</span>
+          <span class="car-spec">GBA Norte</span>
+        </div>
+        <div class="car-features">
+          <span class="car-feature">Aire acondicionado</span>
+          <span class="car-feature">Dirección hidráulica</span>
+          <span class="car-feature">Vidrios eléctricos</span>
+          <span class="car-feature">Pantalla táctil</span>
+        </div>
+        <div class="car-price-row">
+          <div class="car-price">$12.000.000</div>
+          <div class="car-cuota">Solo contado<br><strong>Permuta a evaluar</strong></div>
+        </div>
+        <div class="car-btns">
+          <a href="https://wa.me/5491130650800?text=Hola%20Velaris%2C%20quiero%20info%20del%20VW%20Fox%201.6%202012" class="car-btn-wa">💬 Consultar</a>
+          <button class="car-btn-more" onclick="openModal('fox')">Ver más</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PICASSO -->
+    <div class="car-card" data-tipo="familiar" data-financiacion="no">
+      <div class="car-img-placeholder">🚗
+        <div class="car-badge permuta">Permuta</div>
+      </div>
+      <div class="car-body">
+        <div class="car-name">Citroën C3 Picasso</div>
+        <div class="car-year">2013 · 203.000 km</div>
+        <div class="car-specs">
+          <span class="car-spec">Nafta 1.6</span>
+          <span class="car-spec">Manual</span>
+          <span class="car-spec">GBA Norte</span>
+        </div>
+        <div class="car-features">
+          <span class="car-feature">Aire acondicionado</span>
+          <span class="car-feature">Dirección hidráulica</span>
+          <span class="car-feature">Vidrios eléctricos</span>
+        </div>
+        <div class="car-price-row">
+          <div class="car-price">$11.000.000</div>
+          <div class="car-cuota">Solo contado<br><strong>Permuta a evaluar</strong></div>
+        </div>
+        <div class="car-btns">
+          <a href="https://wa.me/5491130650800?text=Hola%20Velaris%2C%20quiero%20info%20del%20Citroen%20C3%20Picasso%202013" class="car-btn-wa">💬 Consultar</a>
+          <button class="car-btn-more" onclick="openModal('picasso')">Ver más</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 206 -->
+    <div class="car-card" data-tipo="hatchback" data-financiacion="no">
+      <div class="car-img-placeholder">🚗
+        <div class="car-badge permuta">Permuta</div>
+      </div>
+      <div class="car-body">
+        <div class="car-name">Peugeot 206 1.4 Allure</div>
+        <div class="car-year">2012 · 199.000 km</div>
+        <div class="car-specs">
+          <span class="car-spec">Nafta</span>
+          <span class="car-spec">Manual</span>
+          <span class="car-spec">GBA Norte</span>
+        </div>
+        <div class="car-features">
+          <span class="car-feature">Aire acondicionado</span>
+          <span class="car-feature">Dirección hidráulica</span>
+          <span class="car-feature">Vidrios eléctricos</span>
+          <span class="car-feature">Llantas aleación</span>
+        </div>
+        <div class="car-price-row">
+          <div class="car-price">$10.000.000</div>
+          <div class="car-cuota">Solo contado<br><strong>Permuta a evaluar</strong></div>
+        </div>
+        <div class="car-btns">
+          <a href="https://wa.me/5491130650800?text=Hola%20Velaris%2C%20quiero%20info%20del%20Peugeot%20206%202012" class="car-btn-wa">💬 Consultar</a>
+          <button class="car-btn-more" onclick="openModal('206')">Ver más</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso" style="max-width:1200px">
+  <div class="section-tag">Simple y claro</div>
+  <h2 class="section-title">CÓMO<br>FUNCIONA</h2>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-icon">💬</div>
+      <h3>NOS ESCRIBÍS</h3>
+      <p>Contanos qué auto buscás o consultá por alguno del stock. Respondemos el mismo día, siempre.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-icon">🔍</div>
+      <h3>TE ASESORAMOS</h3>
+      <p>Te mostramos opciones reales según tu presupuesto. Sin presión, sin apuro. Tu ritmo.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-icon">🚗</div>
+      <h3>VENÍS A VERLO</h3>
+      <p>Coordinamos una visita en GBA Norte. Ves el auto en persona, hacés la prueba de manejo.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-icon">🔑</div>
+      <h3>TE LO LLEVÁS</h3>
+      <p>Cerramos con toda la documentación en orden. Sin sorpresas, sin costos ocultos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section id="beneficios" style="max-width:1200px">
+  <div class="section-tag">Por qué elegirnos</div>
+  <h2 class="section-title">LO QUE NOS<br>DIFERENCIA</h2>
+  <div class="benefits-grid">
+    <div class="benefit">
+      <div class="benefit-icon">✅</div>
+      <h3>Sin sorpresas</h3>
+      <p>Lo que ves en las fotos es lo que encontrás cuando llegás. Mostramos el estado real de cada auto.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">⚡</div>
+      <h3>Respuesta rápida</h3>
+      <p>Respondemos el mismo día. Una persona real que conoce cada auto te atiende. Sin bots.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">🤝</div>
+      <h3>Sin presión</h3>
+      <p>No te apuramos ni te llamamos tres veces por día. Comprás cuando estás listo.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">📋</div>
+      <h3>Documentación en orden</h3>
+      <p>Verificamos papeles, multas e inhibiciones antes de publicar. Todo listo para transferir.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">💰</div>
+      <h3>Precio real</h3>
+      <p>El precio que ves es el precio real. Sin costos ocultos ni sorpresas. Transparencia total.</p>
+    </div>
+    <div class="benefit">
+      <div class="benefit-icon">🔄</div>
+      <h3>Recibimos tu usado</h3>
+      <p>¿Tenés un auto para entregar como parte de pago? Lo evaluamos y te damos propuesta justa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SIMULADOR -->
+<section id="simulador" style="max-width:900px">
+  <div class="section-tag">Financiación estimada · Five Prendarios</div>
+  <h2 class="section-title">SIMULÁ TU<br>FINANCIACIÓN</h2>
+  <p class="section-sub">Calculá una estimación de tus cuotas con tasas reales de Five Prendarios.</p>
+  
+  <div class="sim-wrapper">
+    <div class="sim-grid">
+      <div class="form-group">
+        <label>Precio del vehículo</label>
+        <input type="number" id="simPrecio" placeholder="Ej: 11500000" oninput="calcular()">
+      </div>
+      <div class="form-group">
+        <label>Anticipo (entrada)</label>
+        <input type="number" id="simAnticipo" placeholder="Ej: 5750000" oninput="calcular()">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Cantidad de cuotas</label>
+      <div class="cuotas-selector">
+        <div class="cuota-opt" onclick="setCuotas(12)">12</div>
+        <div class="cuota-opt" onclick="setCuotas(24)">24</div>
+        <div class="cuota-opt active" onclick="setCuotas(36)">36</div>
+        <div class="cuota-opt" onclick="setCuotas(48)">48</div>
+        <div class="cuota-opt" onclick="setCuotas(60)">60</div>
+      </div>
+    </div>
+    
+    <div class="sim-result" id="simResult" style="display:none">
+      <div class="sim-result-item">
+        <div class="value" id="resAnticipo">-</div>
+        <div class="label">Anticipo</div>
+      </div>
+      <div class="sim-result-item">
+        <div class="value" id="resCuota">-</div>
+        <div class="label">Cuota mensual est.</div>
+      </div>
+      <div class="sim-result-item">
+        <div class="value" id="resMonto">-</div>
+        <div class="label">Monto financiado</div>
+      </div>
+    </div>
+    
+    <p class="sim-note">(*) Valores estimados basados en tasas referenciales de Five Prendarios. Primera cuota a 30 días. Sin garante. Solo sin Veraz. Los valores reales pueden variar según el vehículo y condiciones vigentes. Consultanos para una propuesta personalizada.</p>
+    
+    <div class="sim-cta">
+      <a href="https://wa.me/5491130650800?text=Hola%20Velaris%2C%20quiero%20consultar%20opciones%20de%20financiacion" class="btn-primary">Consultar financiación real →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="max-width:800px">
+  <div class="section-tag">Preguntas frecuentes</div>
+  <h2 class="section-title">TODO LO QUE<br>NECESITÁS SABER</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">¿Cómo sé que el auto está en buen estado?</div>
+      <div class="faq-a">Publicamos fotos reales mostrando el estado actual del auto, incluyendo cualquier detalle visible. Lo que ves en las fotos es exactamente lo que encontrás cuando venís. Sin filtros, sin Photoshop.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">¿Los autos tienen todos los papeles al día?</div>
+      <div class="faq-a">Sí. Verificamos que cada auto no tenga multas, patentes pendientes, inhibiciones ni prendas antes de publicarlo. Todo listo para transferir sin inconvenientes.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">¿Hay financiación disponible?</div>
+      <div class="faq-a">Sí, para vehículos seleccionados operamos con Five Prendarios, una financiera que gestiona créditos prendarios bancarios. El esquema es 50% de entrada + hasta 48 cuotas fijas en pesos, primera cuota a 30 días, sin garante y sin Veraz.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">¿Puedo entregar mi auto como parte de pago?</div>
+      <div class="faq-a">Sí. Evaluamos tu auto como parte de pago. Escribinos con el modelo, año y kilometraje y te damos una propuesta sin compromiso.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">¿Dónde están ubicados?</div>
+      <div class="faq-a">Operamos en GBA Norte — José C. Paz y Vicente López, Buenos Aires. La dirección exacta la compartimos al coordinar la visita con cada interesado confirmado.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">¿Puedo hacer una prueba de manejo?</div>
+      <div class="faq-a">Sí, siempre. Coordinamos una visita y podés hacer la prueba de manejo tranquilo, sin presión y sin límite de tiempo razonable.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" style="max-width:1200px; background:var(--dark2); border-radius:16px; border:1px solid rgba(255,255,255,0.06)">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="section-tag">Hablemos</div>
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:2.5rem;font-weight:900;margin-bottom:1rem;line-height:1">ENCONTRÁ TU<br>AUTO HOY.</h2>
+      <p style="color:rgba(255,255,255,0.55);margin-bottom:2rem;line-height:1.6">Contanos qué buscás y te asesoramos. Sin compromiso, sin presión. Respondemos el mismo día.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="icon">📱</div>
+          <div class="info">
+            <div class="title">WhatsApp</div>
+            <a href="https://wa.me/5491130650800">11 3065-0800</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">📸</div>
+          <div class="info">
+            <div class="title">Instagram</div>
+            <a href="https://instagram.com/velaris.autos">@velaris.autos</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">📍</div>
+          <div class="info">
+            <div class="title">Zona</div>
+            <span>José C. Paz · Vicente López · GBA Norte</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">🕐</div>
+          <div class="info">
+            <div class="title">Horario</div>
+            <span>Lunes a Sábado · 9 a 19hs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p style="color:var(--gray);font-size:0.85rem;margin-bottom:1rem">Completá el formulario y te respondemos por WhatsApp.</p>
+      <div class="contact-form">
+        <input type="text" id="cfNombre" placeholder="Tu nombre">
+        <input type="tel" id="cfTel" placeholder="Tu teléfono">
+        <select id="cfAuto">
+          <option value="">¿Qué auto te interesa?</option>
+          <option>Corsa Classic 2016</option>
+          <option>VW Fox 2012</option>
+          <option>Citroën C3 Picasso 2013</option>
+          <option>Peugeot 206 2012</option>
+          <option>Otro / Consulta general</option>
+        </select>
+        <select id="cfPermuta">
+          <option value="">¿Tenés algo para entregar?</option>
+          <option>Sí, tengo un auto para entregar</option>
+          <option>No, solo compra directa</option>
+        </select>
+        <textarea id="cfMensaje" placeholder="¿Alguna consulta adicional?"></textarea>
+        <button class="btn-primary" onclick="enviarFormulario()" style="border:none;cursor:pointer">Enviar por WhatsApp →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo"><span>V</span><span>ELARIS</span></div>
+  <p style="margin-bottom:0.25rem">Autos usados en GBA Norte · Atención real, precios reales.</p>
+  <p>© 2026 Velaris Autos · José C. Paz · Vicente López · Buenos Aires</p>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/5491130650800?text=Hola%20Velaris%2C%20quiero%20consultar" class="wa-float" title="WhatsApp">💬</a>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modalContent">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ADMIN BTN -->
+<button class="admin-btn" onclick="document.getElementById('adminPanel').style.display='flex'">⚙ Admin</button>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel" style="display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;padding:1rem">
+  <div style="background:var(--dark2);border-radius:16px;padding:2rem;max-width:480px;width:100%;border:1px solid rgba(255,255,255,0.1);max-height:90vh;overflow-y:auto">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem">
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:900">PANEL ADMIN</h2>
+      <button onclick="document.getElementById('adminPanel').style.display='none'" style="background:none;border:none;color:var(--gray);font-size:1.5rem;cursor:pointer">×</button>
+    </div>
+    <p style="color:var(--gray);font-size:0.85rem;margin-bottom:1.5rem">Para agregar fotos reales a los autos, mandame las URLs de las imágenes por WhatsApp y actualizo la web.</p>
+    <div style="display:flex;flex-direction:column;gap:0.75rem">
+      <a href="https://wa.me/5491130650800?text=Actualizar%20fotos%20web" class="btn-primary" style="text-align:center">📸 Enviar fotos para actualizar</a>
+      <a href="https://app.netlify.com" target="_blank" class="btn-secondary" style="text-align:center">🚀 Ir a Netlify</a>
+    </div>
+  </div>
+</div>
+
+<script>
+// DATOS AUTOS
+const autos = {
+  corsa: {
+    nombre: 'Chevrolet Corsa Classic',
+    año: '2016', km: '85.409', motor: '1.4 Nafta', trans: 'Manual',
+    precio: '$11.500.000',
+    financiacion: 'Disponible',
+    cuota: 'Desde $340.000/mes (48 cuotas)',
+    features: ['Aire frío/calor', 'Dirección hidráulica', 'Equipo de música', 'Vidrios manuales'],
+    nota: 'Desgaste en butaca delantera y caja algo dura — se evalúa en visita presencial.',
+    wa: 'Hola%20Velaris%2C%20quiero%20info%20del%20Corsa%20Classic%202016'
+  },
+  fox: {
+    nombre: 'Volkswagen Fox 1.6',
+    año: '2012', km: '133.000', motor: '1.6 Nafta', trans: 'Manual',
+    precio: '$12.000.000',
+    financiacion: 'Solo contado',
+    cuota: 'Permuta a evaluar',
+    features: ['Aire acondicionado', 'Dirección hidráulica', 'Vidrios eléctricos', 'Pantalla táctil'],
+    nota: '',
+    wa: 'Hola%20Velaris%2C%20quiero%20info%20del%20VW%20Fox%201.6%202012'
+  },
+  picasso: {
+    nombre: 'Citroën C3 Picasso 1.6',
+    año: '2013', km: '203.000', motor: '1.6 Nafta', trans: 'Manual',
+    precio: '$11.000.000',
+    financiacion: 'Solo contado',
+    cuota: 'Permuta a evaluar',
+    features: ['Aire acondicionado', 'Dirección hidráulica', 'Vidrios eléctricos'],
+    nota: '',
+    wa: 'Hola%20Velaris%2C%20quiero%20info%20del%20Citroen%20C3%20Picasso%202013'
+  },
+  '206': {
+    nombre: 'Peugeot 206 1.4 Allure',
+    año: '2012', km: '199.000', motor: '1.4 Nafta', trans: 'Manual',
+    precio: '$10.000.000',
+    financiacion: 'Solo contado',
+    cuota: 'Permuta a evaluar',
+    features: ['Aire acondicionado', 'Dirección hidráulica', 'Vidrios eléctricos', 'Llantas aleación Peugeot 208'],
+    nota: '',
+    wa: 'Hola%20Velaris%2C%20quiero%20info%20del%20Peugeot%20206%202012'
+  }
+};
+
+function openModal(id) {
+  const a = autos[id];
+  document.getElementById('modalBody').innerHTML = `
+    <div style="font-size:0.75rem;color:var(--gray);margin-bottom:0.25rem">VELARIS AUTOS</div>
+    <h2 class="modal-h2" style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;margin-bottom:0.1rem">${a.nombre}</h2>
+    <div class="modal-sub">${a.año} · ${a.km} km · ${a.motor} · ${a.trans}</div>
+    <div class="modal-price">${a.precio}</div>
+    <div class="modal-features">
+      ${a.features.map(f => `<div class="modal-feature">${f}</div>`).join('')}
+    </div>
+    <div style="background:var(--blue-dim);border:1px solid rgba(79,195,247,0.2);border-radius:8px;padding:0.75rem;margin-bottom:1.5rem;font-size:0.85rem">
+      <strong style="color:var(--blue)">Financiación:</strong> ${a.financiacion}<br>
+      <span style="color:rgba(255,255,255,0.6)">${a.cuota}</span>
+    </div>
+    ${a.nota ? `<div style="background:rgba(255,200,0,0.08);border:1px solid rgba(255,200,0,0.2);border-radius:8px;padding:0.75rem;margin-bottom:1.5rem;font-size:0.8rem;color:rgba(255,255,255,0.6)">⚠️ ${a.nota}</div>` : ''}
+    <div class="modal-btns">
+      <a href="https://wa.me/5491130650800?text=${a.wa}" class="car-btn-wa" style="display:block;text-align:center">💬 Consultar por WhatsApp</a>
+    </div>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); }
+function closeModalOutside(e) { if(e.target === document.getElementById('modalOverlay')) closeModal(); }
+
+// FILTROS
+function filterCars(tipo) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.car-card').forEach(c => {
+    if(tipo === 'todos') { c.style.display = ''; return; }
+    if(tipo === 'financiacion') { c.style.display = c.dataset.financiacion === 'si' ? '' : 'none'; return; }
+    c.style.display = c.dataset.tipo === tipo ? '' : 'none';
+  });
+}
+
+// SIMULADOR
+let cuotasActivas = 36;
+
+function setCuotas(n) {
+  cuotasActivas = n;
+  document.querySelectorAll('.cuota-opt').forEach(o => {
+    o.classList.toggle('active', parseInt(o.textContent) === n);
+  });
+  calcular();
+}
+
+function calcular() {
+  const precio = parseFloat(document.getElementById('simPrecio').value) || 0;
+  const anticipo = parseFloat(document.getElementById('simAnticipo').value) || 0;
+  if(!precio || !anticipo || anticipo >= precio) {
+    document.getElementById('simResult').style.display = 'none';
+    return;
+  }
+  const monto = precio - anticipo;
+  // TNA aproximada Five Prendarios ~55% para usados
+  const tna = 0.55;
+  const r = tna / 12;
+  const n = cuotasActivas;
+  const cuota = monto * (r * Math.pow(1+r, n)) / (Math.pow(1+r, n) - 1);
+  
+  document.getElementById('resAnticipo').textContent = formatPeso(anticipo);
+  document.getElementById('resCuota').textContent = formatPeso(cuota);
+  document.getElementById('resMonto').textContent = formatPeso(monto);
+  document.getElementById('simResult').style.display = 'grid';
+}
+
+function formatPeso(n) {
+  if(n >= 1000000) return '$' + (n/1000000).toFixed(1) + 'M';
+  if(n >= 1000) return '$' + Math.round(n/1000) + 'k';
+  return '$' + Math.round(n);
+}
+
+// FAQ
+function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
+
+// FORMULARIO
+function enviarFormulario() {
+  const nombre = document.getElementById('cfNombre').value;
+  const tel = document.getElementById('cfTel').value;
+  const auto = document.getElementById('cfAuto').value;
+  const permuta = document.getElementById('cfPermuta').value;
+  const msg = document.getElementById('cfMensaje').value;
+  
+  let texto = `Hola Velaris! Mi nombre es ${nombre || 'N/A'}`;
+  if(tel) texto += `, mi teléfono es ${tel}`;
+  if(auto) texto += `. Me interesa: ${auto}`;
+  if(permuta) texto += `. ${permuta}`;
+  if(msg) texto += `. ${msg}`;
+  
+  window.open('https://wa.me/5491130650800?text=' + encodeURIComponent(texto), '_blank');
+}
+</script>
+</body>
+</html>
